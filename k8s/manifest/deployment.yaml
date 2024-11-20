@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Lightbulb app
+  labels:
+    app: my-static-site
+spec:
+  replicas: 2  # Number of replicas of the pod
+  selector:
+    matchLabels:
+      app: Lightbulb app
+  template:
+    metadata:
+      labels:
+        app: Lightbulb app
+    spec:
+      containers:
+      - name: Lightbulb app
+        image: nginx:alpine  # Docker image to use for the container
+        ports:
+        - containerPort: 80  # Expose port 80 to the Kubernetes service
+        volumeMounts:
+        - name: static-files
+          mountPath: /usr/share/nginx/html  # Path to serve the website
+      volumes:
+      - name: static-files
+        configMap:
+          name: static-files-config  # This ConfigMap contains your HTML, CSS, JS files
+

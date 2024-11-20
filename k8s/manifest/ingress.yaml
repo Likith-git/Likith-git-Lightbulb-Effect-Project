@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: Lightbulb app-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /  # Optional, rewrite URLs to the root
+spec:
+  rules:
+  - host: my-static-site.example.com  # Your custom domain or external DNS name
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name:Lightbulb app-service  # The service you want to route traffic to
+            port:
+              number: 80  # The port exposed by the service
