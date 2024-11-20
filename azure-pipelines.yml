@@ -14,7 +14,7 @@ variables:
   imageRepository: 'likithgitlikithgitlightbulbeffectproject'
   containerRegistry: 'lightbulbapp.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/dockerfile'
-  tag: '$(Build.BuildId)'
+  tag: '$(Build.BuildId),latest'
 
 pool:
  name: 'pin'
