@@ -1,21 +1,53 @@
-.canvas{
-    width: 600px;
-    height: 500px;
-    margin: 50px auto;
-    text-align: center;
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-.bulb-off{
-    width: 265px;
-    height: 400px;
-    background: url('lightoff.png') no-repeat;
-    margin: auto;
+body, html {
+    font-family: Arial, sans-serif;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f9;
 }
 
-.bulb-on{
-    width: 265px;
-    height: 400px;
-    background: url('lighton.png') no-repeat;;
-    margin: auto;
+.container {
+    text-align: center;
+    max-width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#bulb {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0 auto;
+}
+
+.bulb-on {
+    background-color: yellow; /* Bulb is on */
+    transform: scale(1.1); /* Slightly enlarges when turned on */
+}
+
+.bulb-off {
+    background-color: #ccc; /* Bulb is off */
+}
+
+#bulb:hover {
+    transform: scale(1.05); /* Hover effect */
 }

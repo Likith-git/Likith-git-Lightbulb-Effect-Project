@@ -1,7 +1,14 @@
-const light = document.querySelector('#bulb');
+// Select the bulb element
+const bulb = document.getElementById('bulb');
 
-light.addEventListener('click', function(e){
-
-    e.target.classList.toggle('bulb-on');
-
-})
+// Add click event listener to toggle the bulb on and off
+bulb.addEventListener('click', () => {
+    // Toggle the bulb class between "on" and "off"
+    if (bulb.classList.contains('bulb-off')) {
+        bulb.classList.remove('bulb-off');
+        bulb.classList.add('bulb-on');
+    } else {
+        bulb.classList.remove('bulb-on');
+        bulb.classList.add('bulb-off');
+    }
+});

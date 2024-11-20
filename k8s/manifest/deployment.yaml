@@ -15,8 +15,8 @@ spec:
         app: Lightbulb app
     spec:
       containers:
-      - name: Lightbulb app
-        image: nginx:alpine  # Docker image to use for the container
+      - name: Lightbulbapp
+        image: lightbulbapp.azurecr.io/likithgitlikithgitlightbulbeffectproject:latest
         ports:
         - containerPort: 80  # Expose port 80 to the Kubernetes service
         volumeMounts:
