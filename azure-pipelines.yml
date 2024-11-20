@@ -36,7 +36,7 @@ stages:
         tags: '$(tag)'
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(Build.SourcesDirectory)/K8s/manifest'
+        SourceFolder: '$(Build.SourcesDirectory)/k8s/manifest'
         Contents: '**'
         TargetFolder: '$(Build.ArtifactStagingDirectory)/$(ARTIFACT_NAME)'
         CleanTargetFolder: true
